@@ -18,7 +18,7 @@ window.ViktorGallery = (function(){
  	start();
 
 	return {
-		started: started,
+		isStarted:()=>started,
 		start: start,
 		stop: stop,
 	};
@@ -27,13 +27,14 @@ window.ViktorGallery = (function(){
 		if (started) return;
 		started = !started;
 
+		// listen
 		'click touchstart touchmove touchend'.split(' ').forEach(type=>{
 			console.log('gallery looking for',type);
 			document.addEventListener(type, process, true);
 		});
 
 		// inject photoswipe
-		addFile('script','src','https://viktoroam.glitch.me/photoswipe.4.1.3-Viktor.Tabori.js');
+		addFile('script','src','https://raw.githubusercontent.com/thesved/ViktoRoam/master/js/photoswipe.4.1.3-Viktor.Tabori.js');
 		addFile('script','src','https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js');
 		addFile('link', 'href', 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.css', {rel:'stylesheet'});
 		addFile('link', 'href', 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.css', {rel:'stylesheet'});
@@ -45,6 +46,9 @@ window.ViktorGallery = (function(){
 			document.body.appendChild(div);
 		}
 
+		// log
+		console.log('Galler plugin loaded & listening');
+
 		return true;
 	}
 
@@ -52,9 +56,13 @@ window.ViktorGallery = (function(){
 		if (!started) return;
 		started = !started;
 
+		// stop listening
 		'click touchstart touchmove touchend'.split(' ').forEach(type=>{
 			document.removeEventListener(type, process, true);
 		});
+
+		// log
+		console.log('Galler plugin stopped');
 
 		return true;
 	}
@@ -99,11 +107,9 @@ window.ViktorGallery = (function(){
 		var rect = target.getBoundingClientRect();
 		var x = e.pageX - rect.left;
 		var y = e.pageY - rect.top;
-		console.log(x,y, x>(rect.width-44) && y<44); // top right corner
 		if (window.innerWidth<500 && x>(rect.width-44) && y<44) return; // we don't fire for top right corner for mobile
 
 		// prevent click, so editing is not initiated
-		console.log(e.type,target,e);
 		e.preventDefault();
 		e.stopPropagation();
 
