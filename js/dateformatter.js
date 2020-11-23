@@ -1,6 +1,6 @@
 /*
  * Viktor's Roam default date format POC
- * version: 0.2
+ * version: 0.3
  * author: @ViktorTabori
  *
  * How to install it:
