@@ -11,7 +11,7 @@
  *  - click on images
  *  - edit image url on mobile: click top right corner of image
  */
-if (window.ViktorGallery) window.ViktorGallery.stop();
+if (window.ViktorGallery && window.ViktorGallery.stop) window.ViktorGallery.stop();
 window.ViktorGallery = (function(){
  	var started = false;
 
