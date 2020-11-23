@@ -5,7 +5,7 @@
  *
  * `ctrl + S` to export the whole graph
  */
-if (window.ViktorExport) window.ViktorExport.stop();
+if (window.ViktorExport && window.ViktorExport.stop) window.ViktorExport.stop();
 window.ViktorExport = (function(){
   	/**
      * Possible formats:
