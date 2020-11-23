@@ -47,8 +47,8 @@ window.ViktorExport = (function(){
 		if (ev.code != "KeyS" || !ev.ctrlKey || ev.altKey || ev.metaKey || ev.shiftKey) return;
 
 		console.log("CTRL + S pressed");
-		e.preventDefault();
-		e.stopPropagation();
+		ev.preventDefault();
+		ev.stopPropagation();
 
 		// actions
 		var clicks = [
