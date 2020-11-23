@@ -52,7 +52,7 @@ window.ViktorOpts = {
 	var defaultrepo = 'https://js.limitlessroam.com/js/';
 
 	// add alpha channel
-	if (alphaChannel) Object.keys(alphaChannel).forEach(a=>{ load[a]=true });
+	if (typeof alphaChannel == 'object') Object.keys(alphaChannel).forEach(a=>{ load[a]=true });
 
 	// handling script loading and stopping
 	Object.keys(load).forEach(k=>{
@@ -60,7 +60,8 @@ window.ViktorOpts = {
 
 		// remove script if exists
 		var script = document.getElementById(moduleName);
-		if (script) script.remove();
+		if (script) 
+			script.remove();
 
 		// if script is set to false
 		if (!load[k]) {
@@ -74,7 +75,7 @@ window.ViktorOpts = {
 
 		// add it
 		var extension = document.createElement("script");
-		extension.src = alphaChannel && alphaChannel[k] ? alphaChannel[k] : defaultrepo+k+'.js';	// add url
+		extension.src = typeof alphaChannel == 'object' && typeof alphaChannel[k] != 'undefined' ? alphaChannel[k] : defaultrepo+k+'.js';	// add url
 		extension.src = extension.src + (extension.src.indexOf('?') > -1 ? '&' : '?') + 'cb='+Date.now();	// add cache buster
 		extension.id = moduleName;
 		extension.async = false;
