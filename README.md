@@ -6,7 +6,7 @@ Better UX for Roam Research
 2. Copy this text to a block: `{{[[roam/js]]}}`
 3. Hit `enter` then `tab`
 4. Create a code block by using the forward slash menu: `/code block`
-5. Click out from the block then copy this text within the code block (the code block has a grey number 1, click right to it on the white part)
+5. Click out from the block then copy the code from below to inside the code block (the code block has a grey number 1, click right to it on the white part)
 6. enable running the script by clicking: `Yes, I know what I am doing`
 
 ```javascript
