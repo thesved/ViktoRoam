@@ -60,8 +60,7 @@ window.ViktorOpts = {
 
 		// remove script if exists
 		var script = document.getElementById(moduleName);
-		if (script) 
-			script.remove();
+		if (script) script.remove();
 
 		// if script is set to false
 		if (!load[k]) {
