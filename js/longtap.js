@@ -12,8 +12,8 @@
  *  - long tap on bullets to simulate right click
  *  - long tap on titles, page references to open in sidebar
  */
-if (window.ViktorMobileLongTap) window.ViktorMobileLongTap.stop();
-window.ViktorMobileLongTap = /*window.ViktorMobileLongTap ||*/ (function(){
+if (window.ViktorLongtap && window.ViktorLongtap.stop) window.ViktorLongtap.stop();
+window.ViktorLongtap = (function(){
 	// max wait for second tap in ms
 	var doLog = true,
 		minWaitTime = 200, // turn taps into long taps after this amount of milliseconds
