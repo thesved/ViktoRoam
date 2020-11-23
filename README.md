@@ -1,6 +1,8 @@
 # ViktoRoam
 Better UX for Roam Research
 
+See: https://twitter.com/ViktorTabori/status/1330887482871869444
+
 # How to install
 1. Go to [[roam/js]] page
 2. Copy this text to a block: `{{[[roam/js]]}}`
