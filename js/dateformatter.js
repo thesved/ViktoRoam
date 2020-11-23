@@ -14,9 +14,9 @@
  *  - edit the dateformat variable, default is: dateformat = 'Month Dth, YYYY';
  */
 if (window.ViktorDateformatter && typeof window.ViktorDateformatter.stop === 'function') window.ViktorDateformatter.stop();
-window.ViktorDateformatter = (function(){
+window.ViktorDateformatter = (function(){
 
-	var dateformat = window.ViktorOpts && window.ViktorOpts.dateformat || 'YYYY.MM.DD EEE';
+	var dateformat = window.ViktorOpts && window.ViktorOpts.dateformat || 'YYYY.MM.DD EEE';
 	// formats dates, roam default is `Month Dth, YYYY`
 	/*
 	 * dY - delta years between date and today
@@ -134,7 +134,7 @@ window.ViktorDateformatter = (function(){
 			mutations.push(dom);
 
 		mutations = mutations.filter(function(_e){ 
-			if (!_e.textContent || !_e.parentNode) return; // return if no text content
+			if (!_e.textContent || !_e.parentNode) return; // return if no text content
 
 			// get date match
 			var search = remove && _e.dataset && _e.dataset.originalText || _e.textContent;
