@@ -13,7 +13,7 @@
  * How to modify it?
  *  - edit the dateformat variable, default is: dateformat = 'Month Dth, YYYY';
  */
-if (window.ViktorDateformatter) window.ViktorDateformatter.stop();
+if (window.ViktorDateformatter && typeof window.ViktorDateformatter.stop === 'function') window.ViktorDateformatter.stop();
 window.ViktorDateformatter = (function(){
 
 	var dateformat = window.ViktorOpts && window.ViktorOpts.dateformat || 'YYYY.MM.DD EEE';
