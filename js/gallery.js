@@ -34,7 +34,7 @@ window.ViktorGallery = (function(){
 		});
 
 		// inject photoswipe
-		addFile('script','src','https://raw.githubusercontent.com/thesved/ViktoRoam/master/js/photoswipe.4.1.3-Viktor.Tabori.js');
+		addFile('script','src','https://js.limitlessroam.com/js/photoswipe.4.1.3-Viktor.Tabori.js');
 		addFile('script','src','https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js');
 		addFile('link', 'href', 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.css', {rel:'stylesheet'});
 		addFile('link', 'href', 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.css', {rel:'stylesheet'});
