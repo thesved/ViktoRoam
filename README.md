@@ -33,6 +33,10 @@ See: https://twitter.com/ViktorTabori/status/1330887482871869444
 // settings
 window.ViktorOpts = {
 	dateformat: 'YYYY.MM.DD EEE',	// see for details: https://github.com/thesved/ViktoRoam/blob/master/js/dateformat.js
+	nameMonths: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+	nameMonthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+	nameDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+	nameDaysShort: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
 	exportFormat: 'JSON',		// EDN | JSON | Markdown
 	fuckitlineTag: 'fuckitline',	// tag a block with this, eg #fuckitline
 	fuckitlineName: 'fuck it line'	// name above the fuckitline
