@@ -19,10 +19,6 @@ window.ViktorDateformatter = (function(){
 	var dateformat = window.ViktorOpts && window.ViktorOpts.dateformat || 'YYYY.MM.DD EEE';
 	// formats dates, roam default is `Month Dth, YYYY`
 	/*
-	 * dY - delta years between date and today
-	 * dM - delta month between date and today
-	 * dW - delta week between date and today
-	 * dD - delta day between date and today
 	 * YYYY - year, 2020
 	 * YY - year, 20
 	 * Month - month, January
@@ -53,10 +49,10 @@ window.ViktorDateformatter = (function(){
 			'.rm-zoom span',
 			'.bp3-popover button.bp3-button' // filters
 		].join(', '),
-		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-		monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-		days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-		daysShort = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+		months = window.ViktorOpts && window.ViktorOpts.nameMonths || ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		monthsShort = window.ViktorOpts && window.ViktorOpts.nameMonthsShort || ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		days = window.ViktorOpts && window.ViktorOpts.nameDays || ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+		daysShort = window.ViktorOpts && window.ViktorOpts.nameDaysShort || ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 	// start date change
 	setTimeout(start, 1000);
