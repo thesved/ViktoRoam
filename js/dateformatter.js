@@ -360,7 +360,7 @@ window.ViktorDateformatter = (function(){
 			return 1;
 
 		// first week of year: this Monday till Thursday, otherwise next monday
-		var week1 = new Date(date.getFullYear(), 0, 1);
+		var week1 = new Date(date.getFullYear(), 0, 1, 12, 0);
 		if (getDayOfWeek(week1) <= 3)
 			week1 = addDay(-getDayOfWeek(week1), week1);
 		else
