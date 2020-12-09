@@ -350,15 +350,28 @@ window.ViktorDateformatter = (function(){
 		return (date.getDay()+6)%7;	// week begins with monday
 	}
 
-	// week number of the year
+	// week number of the year: https://en.wikipedia.org/wiki/ISO_week_date
 	function getWeekOfYear(date) {
 		date = new Date(date);
-		// get first Monday of the year
+		// if last Monday of year is >= 12-29 and date is after that then dates belong to next year's first week
+		var lastMonday = new Date(date.getFullYear()+1, 0, 1, 12, 0);
+		lastMonday = addDay(-getDayOfWeek(lastMonday), lastMonday);
+		if (compareDates(lastMonday, new Date(date.getFullYear(), 11, 29, 12, 0)) >= 0 && compareDates(date, lastMonday) >= 0)
+			return 1;
+
+		// first week of year: this Monday till Thursday, otherwise next monday
 		var week1 = new Date(date.getFullYear(), 0, 1);
-		week1 = addDay(-getDayOfWeek(week1), week1);
+		if (getDayOfWeek(week1) <= 3)
+			week1 = addDay(-getDayOfWeek(week1), week1);
+		else
+			week1 = addDay(7-getDayOfWeek(week1), week1);
+		
 		// calculate the difference in weeks
 		var diff = (date.getTime()-week1.getTime())/(60*60*24*7*1000);
-		return upperCeil(diff);
+		if (diff < 0) // if diff is negative it means we have to return last year's week number
+			return getWeekOfYear(new Date(date.getFullYear(), 0, 0, 12, 0));
+		else
+			return upperCeil(diff);
 	}
 
 	// compares two dates
